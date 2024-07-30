@@ -5,6 +5,8 @@
 #include <adv3.h>
 #include <en_us.h>
 
+#include "adv3Patches.h"
+
 // Module ID for the library
 adv3PatchesModuleID: ModuleID {
         name = 'Adv3 Patches Library'
