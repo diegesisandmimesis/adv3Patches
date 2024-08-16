@@ -6,6 +6,9 @@
 //
 //	In stock adv3 >FOO, BAR throws an exception.  This fixes that.
 //
+//	Code originally by @RealNC, taken from
+//	https://intfiction.org/t/nil-object-reference-parser-bug-tads3/9198
+//
 //
 #include <adv3.h>
 #include <en_us.h>
