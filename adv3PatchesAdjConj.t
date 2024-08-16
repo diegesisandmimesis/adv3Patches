@@ -29,6 +29,8 @@
 
 grammar adjectiveConjunction(main):
 	','
+	| 'and'
+	| ',' 'and'
 	: BasicProd
 	isEndOfSentence() { return(nil); }
 ;
