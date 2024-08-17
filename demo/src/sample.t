@@ -47,4 +47,4 @@ gameMain: GameMainDef
 
 startRoom: Room 'Void' "This is a featureless void.";
 +me: Person;
-+pebble: Thing '(small) (round) pebble' 'pebble' "A small, round pebble. ";
++pebble: Thing '(round) pebble' 'pebble' "A small, round pebble. ";

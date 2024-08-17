@@ -35,13 +35,15 @@ grammar adjectiveConjunction(main):
 	isEndOfSentence() { return(nil); }
 ;
 
-grammar completeNounPhrase(adjConj):
-	adjPhrase->ap_ adjectiveConjunction completeNounPhrase->np_
-	: NounListProd
-	resolveNouns(resolver, results) {
-		return(np_.resolveNouns(resolver, results));
+grammar simpleNounPhrase(adjConjNP):
+	adjWord->adj_ adjectiveConjunction simpleNounPhrase->np_
+	: NounPhraseWithVocab
+	getVocabMatchList(resolver, results, extraFlags) {
+		return(intersectNounLists(
+			adj_.getVocabMatchList(resolver, results, extraFlags),
+			np_.getVocabMatchList(resolver, results, extraFlags)));
 	}
 	getAdjustedTokens() {
-		return(ap_.getAdjustedTokens());
+		return(adj_.getAdjustedTokens() + np_.getAdjustedTokens());
 	}
 ;
